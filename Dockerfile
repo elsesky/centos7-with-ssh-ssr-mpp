@@ -32,6 +32,15 @@ RUN (mkdir -p /root/.ssh/; \
 # terminfo for screen.xterm-256color
 ADD screen.xterm-256color /root/
 RUN tic /root/screen.xterm-256color
+##########################################################################
+#self action
+RUN  (mkdir /elsesky; \
+     cd /elsesky; \
+     git clone -b manyuser https://github.com/shadowsocksr/shadowsocksr.git; \
+     cd shadowsocksr; \
+     bash initcfg.sh)
+
+
 
 ##########################################################################
 # passwords 

@@ -35,9 +35,9 @@ RUN tic /root/screen.xterm-256color
 ##########################################################################
 #self action
 RUN  (mkdir /elsesky; \
-     cd /elsesky; \
-     git clone -b manyuser https://github.com/shadowsocksr/shadowsocksr.git; \
-     cd shadowsocksr; \
+     cd /elsesky)
+RUN git clone -b manyuser https://github.com/shadowsocksr/shadowsocksr.git; \
+RUN (cd /elsesky/shadowsocksr; \
      bash initcfg.sh)
 
 

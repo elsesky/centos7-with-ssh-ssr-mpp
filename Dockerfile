@@ -107,5 +107,13 @@ RUN echo "}">>/elsesky/shadowsocksr/user-config.json
 # passwords 
 RUN echo "root:$ROOT_PASS" | chpasswd
 
+##########################################################################
+# running shell 
+COPY entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
 EXPOSE 22
-CMD service crond start; /usr/sbin/sshd -D;/elsesky/shadowsocksr/shadowsocks/run.sh
+CMD service crond start; /usr/sbin/sshd -D;
+
+# Configure container to run as an executable
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

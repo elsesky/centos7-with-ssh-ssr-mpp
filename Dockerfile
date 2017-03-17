@@ -8,14 +8,14 @@ RUN yum update -y glibc-common
 
 ##########################################################################
 # all yum installations here
-RUN yum install -y sudo passwd openssh-server openssh-clients tar screen crontabs strace telnet perl libpcap bc patch ntp dnsmasq unzip pax which git nano
+RUN yum install -y sudo passwd openssh-server openssh-clients tar screen crontabs strace telnet perl libpcap bc patch ntp dnsmasq unzip pax which git nano || true
 
 ##########################################################################
 # add epel repository
 RUN rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 
 #RUN (yum install -y hiera ruby lsyncd sshpass rng-tools)
-RUN (yum install -y lsyncd sshpass rng-tools)
+RUN (yum install -y hiera lsyncd sshpass rng-tools || true)
 
 # start sshd to generate host keys, patch sshd_config and enable yum repos
 RUN (service sshd start; \

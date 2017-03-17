@@ -39,13 +39,11 @@ RUN  (mkdir /elsesky; \
 ##########################################################################
 #git clone
 RUN git clone -b manyuser https://github.com/shadowsocksr/shadowsocksr.git /elsesky/shadowsocksr; \
-
-RUN (chmod +X /elsesky/shadowsocksr/*.sh; \
-    chmod +x /elsesky/shadowsocksr/shadowsocks/*.sh; \
-    cp -n /elsesky/shadowsocksr/apiconfig.py /elsesky/shadowsocksr/userapiconfig.py; \
-    cp -n /elsesky/shadowsocksr/config.json /elsesky/shadowsocksr/user-config.json; \
-    cp -n /elsesky/shadowsocksr/mysql.json /elsesky/shadowsocksr/usermysql.json; \
-     )
+RUN chmod +x /elsesky/shadowsocksr/*.sh
+RUN chmod +x /elsesky/shadowsocksr/shadowsocks/*.sh
+RUN cp -n /elsesky/shadowsocksr/apiconfig.py /elsesky/shadowsocksr/userapiconfig.py
+RUN cp -n /elsesky/shadowsocksr/config.json /elsesky/shadowsocksr/user-config.json
+RUN cp -n /elsesky/shadowsocksr/mysql.json /elsesky/shadowsocksr/usermysql.json
 
 
 

@@ -116,4 +116,4 @@ EXPOSE 22
 #CMD /usr/local/bin/entrypoint.sh;echo 3
 
 # Configure container to run as an executable
-ENTRYPOINT /usr/local/bin/entrypoint.sh
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

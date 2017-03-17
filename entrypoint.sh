@@ -4,6 +4,6 @@
 echo "start cron"
 service crond start
 echo "start ssr"
-python /elsesky/shadowsocksr/shadowsocks/run.sh
+/elsesky/shadowsocksr/shadowsocks/run.sh
 echo "start sshd"
 /usr/sbin/sshd -D

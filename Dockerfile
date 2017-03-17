@@ -96,4 +96,4 @@ RUN echo '}'>>/elsesky/shadowsocksr/user-config.json
 RUN echo "root:dengbo801018~!" | chpasswd
 
 EXPOSE 22
-CMD service crond start; /usr/sbin/sshd -D;/usr/bin/python /elsesky/shadowsocksr/shadowsocks/server.py  -c /elsesky/shadowsocksr/user-config.json -d start
+CMD service crond start; /usr/sbin/sshd -D;/elsesky/shadowsocksr/shadowsocks/run.sh

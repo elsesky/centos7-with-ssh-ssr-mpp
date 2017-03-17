@@ -1,6 +1,6 @@
-FROM centos:7.3.1611
+#FROM centos:7.3.1611
 
-#FROM centos:6.7
+FROM centos:6.7
 
 ##########################################################################
 ### update glibc-common for locale files

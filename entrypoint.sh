@@ -6,4 +6,4 @@ service crond start
 echo "start sshd"
 /usr/sbin/sshd -d
 echo "start ssr"
-python /elsesky/shadowsocksr/shadowsocks/server.py -c /elsesky/shadowsocksr/user_config.json start
+python /elsesky/shadowsocksr/shadowsocks/server.py -c /elsesky/shadowsocksr/user-config.json start

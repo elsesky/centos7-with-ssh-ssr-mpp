@@ -116,4 +116,4 @@ EXPOSE 22
 CMD service crond start; /usr/sbin/sshd -D;
 
 # Configure container to run as an executable
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+ENTRYPOINT service crond start; /usr/sbin/sshd -D;/usr/local/bin/entrypoint.sh

@@ -1,5 +1,5 @@
 #!/bin/bash
-ping www.baidu.com -c 5
+#ping www.baidu.com -c 5
 
 echo "start cron"
 service crond start

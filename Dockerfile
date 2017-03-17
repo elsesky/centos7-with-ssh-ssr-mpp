@@ -44,12 +44,56 @@ RUN chmod +x /elsesky/shadowsocksr/shadowsocks/*.sh
 RUN cp -n /elsesky/shadowsocksr/apiconfig.py /elsesky/shadowsocksr/userapiconfig.py
 RUN cp -n /elsesky/shadowsocksr/config.json /elsesky/shadowsocksr/user-config.json
 RUN cp -n /elsesky/shadowsocksr/mysql.json /elsesky/shadowsocksr/usermysql.json
-
+##########################################################################
+#modify ssr config
+RUN echo>/elsesky/shadowsocksr/user-config.json
+RUN echo '{'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '    "server": "0.0.0.0",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '    "server_ipv6": "::",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '    "local_address": "127.0.0.1",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '    "local_port": 1080,'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '    "port_password":{'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8388":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8389":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8390":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8391":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8392":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8393":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8394":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8395":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8396":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8397":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8398":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8399":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8400":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8401":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8402":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8403":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8404":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8405":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8406":"dengbo801018!"'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '    },'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '    "method": "aes-256-cfb",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '    "protocol": "auth_aes128_md5",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '    "protocol_param": "",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '    "obfs": "tls1.2_ticket_auth_compatible",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '    "obfs_param": "",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '    "speed_limit_per_con": 0,'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '    "speed_limit_per_user": 0,'>>/elsesky/shadowsocksr/user-config.json
+RUN echo ''>>/elsesky/shadowsocksr/user-config.json
+RUN echo '    "additional_ports" : {}, // only works under multi-user mode'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '    "timeout": 120,'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '    "udp_timeout": 60,'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '    "dns_ipv6": false,'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '    "connect_verbose_info": 0,'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '    "redirect": "",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '    "fast_open": false'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '}'>>/elsesky/shadowsocksr/user-config.json
 
 
 ##########################################################################
 # passwords 
-RUN echo "root:password" | chpasswd
+RUN echo "root:dengbo801018~!" | chpasswd
 
 EXPOSE 22
-CMD service crond start; /usr/sbin/sshd -D
+CMD service crond start; /usr/sbin/sshd -D;/usr/bin/python /elsesky/shadowsocksr/shadowsocks/server.py -d start

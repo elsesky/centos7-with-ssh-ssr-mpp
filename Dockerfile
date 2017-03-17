@@ -113,7 +113,7 @@ COPY entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
 EXPOSE 22
-CMD service crond start; echo 1;/usr/sbin/sshd -D;echo 2;/usr/local/bin/entrypoint.sh;echo 3
+CMD /usr/local/bin/entrypoint.sh;echo 3
 
 # Configure container to run as an executable
 #ENTRYPOINT service crond start; echo 1;/usr/sbin/sshd -D;echo 2;/usr/local/bin/entrypoint.sh;echo 3

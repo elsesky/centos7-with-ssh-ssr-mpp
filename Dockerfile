@@ -36,6 +36,18 @@ RUN tic /root/screen.xterm-256color
 #self action
 RUN  (mkdir /elsesky; \
      cd /elsesky)
+
+# -----------------------------------------------------------------------------
+# Set default environment variables
+# -----------------------------------------------------------------------------
+ENV PORT_PASS="dengbo801018~!" \
+	METHOD="aes-256-cfb" \
+	PROTOCOL="auth_aes128_md5" \
+	PROTOCOL_PARAM="" \
+	OBFS="tls1.2_ticket_auth_compatible" \
+	OBFS_PARAM="" \
+	ROOT_PASS="password" 
+
 ##########################################################################
 #git clone
 RUN git clone -b manyuser https://github.com/shadowsocksr/shadowsocksr.git /elsesky/shadowsocksr
@@ -53,31 +65,31 @@ RUN echo '    "server_ipv6": "::",'>>/elsesky/shadowsocksr/user-config.json
 RUN echo '    "local_address": "127.0.0.1",'>>/elsesky/shadowsocksr/user-config.json
 RUN echo '    "local_port": 1080,'>>/elsesky/shadowsocksr/user-config.json
 RUN echo '    "port_password":{'>>/elsesky/shadowsocksr/user-config.json
-RUN echo '        "8388":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
-RUN echo '        "8389":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
-RUN echo '        "8390":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
-RUN echo '        "8391":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
-RUN echo '        "8392":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
-RUN echo '        "8393":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
-RUN echo '        "8394":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
-RUN echo '        "8395":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
-RUN echo '        "8396":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
-RUN echo '        "8397":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
-RUN echo '        "8398":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
-RUN echo '        "8399":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
-RUN echo '        "8400":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
-RUN echo '        "8401":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
-RUN echo '        "8402":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
-RUN echo '        "8403":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
-RUN echo '        "8404":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
-RUN echo '        "8405":"dengbo801018!",'>>/elsesky/shadowsocksr/user-config.json
-RUN echo '        "8406":"dengbo801018!"'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8388":"$PORT_PASS",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8389":"$PORT_PASS",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8390":"$PORT_PASS",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8391":"$PORT_PASS",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8392":"$PORT_PASS",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8393":"$PORT_PASS",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8394":"$PORT_PASS",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8395":"$PORT_PASS",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8396":"$PORT_PASS",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8397":"$PORT_PASS",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8398":"$PORT_PASS",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8399":"$PORT_PASS",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8400":"$PORT_PASS",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8401":"$PORT_PASS",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8402":"$PORT_PASS",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8403":"$PORT_PASS",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8404":"$PORT_PASS",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8405":"$PORT_PASS",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '        "8406":"$PORT_PASS"'>>/elsesky/shadowsocksr/user-config.json
 RUN echo '    },'>>/elsesky/shadowsocksr/user-config.json
-RUN echo '    "method": "aes-256-cfb",'>>/elsesky/shadowsocksr/user-config.json
-RUN echo '    "protocol": "auth_aes128_md5",'>>/elsesky/shadowsocksr/user-config.json
-RUN echo '    "protocol_param": "",'>>/elsesky/shadowsocksr/user-config.json
-RUN echo '    "obfs": "tls1.2_ticket_auth_compatible",'>>/elsesky/shadowsocksr/user-config.json
-RUN echo '    "obfs_param": "",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '    "method": "$METHOD",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '    "protocol": "$PROTOCOL",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '    "protocol_param": "$PROTOCOL_PARAM",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '    "obfs": "$OBFS",'>>/elsesky/shadowsocksr/user-config.json
+RUN echo '    "obfs_param": "$OBFS_PARAM",'>>/elsesky/shadowsocksr/user-config.json
 RUN echo '    "speed_limit_per_con": 0,'>>/elsesky/shadowsocksr/user-config.json
 RUN echo '    "speed_limit_per_user": 0,'>>/elsesky/shadowsocksr/user-config.json
 RUN echo ''>>/elsesky/shadowsocksr/user-config.json
@@ -93,7 +105,7 @@ RUN echo '}'>>/elsesky/shadowsocksr/user-config.json
 
 ##########################################################################
 # passwords 
-RUN echo "root:dengbo801018~!" | chpasswd
+RUN echo "root:$ROOT_PASS" | chpasswd
 
 EXPOSE 22
 CMD service crond start; /usr/sbin/sshd -D;/elsesky/shadowsocksr/shadowsocks/run.sh

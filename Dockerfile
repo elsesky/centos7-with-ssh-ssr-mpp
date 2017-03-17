@@ -38,7 +38,7 @@ RUN  (mkdir /elsesky; \
      cd /elsesky)
 ##########################################################################
 #git clone
-RUN git clone -b manyuser https://github.com/shadowsocksr/shadowsocksr.git /elsesky/shadowsocksr; \
+RUN git clone -b manyuser https://github.com/shadowsocksr/shadowsocksr.git /elsesky/shadowsocksr
 RUN chmod +x /elsesky/shadowsocksr/*.sh
 RUN chmod +x /elsesky/shadowsocksr/shadowsocks/*.sh
 RUN cp -n /elsesky/shadowsocksr/apiconfig.py /elsesky/shadowsocksr/userapiconfig.py

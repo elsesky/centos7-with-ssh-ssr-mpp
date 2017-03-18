@@ -1,8 +1,17 @@
 == Build Docker Images for CentOS with SSH and SSR for arukas
+===Description
+Open port 22 for SSH,you can set root password use -r in CMD
+Open port from 8388 to 8406 for ssr,you can set port password use -p in CMD
+You can set 8388-8406 in Port option for ssr and 22 in Port option for ssh on arukas.
+
+
 
 === USAGE
+=====PORT:
+22:SSH
+8388 - 8406:SSR
 
-CMD:
+====CMD:
 -----------------------------
 -r root_pass -p port_pass -o OBFS -m METHOD -P PROTOCOL
 -----------------------------
@@ -11,9 +20,9 @@ EXAMPLE1[compatible with SS]:
 ----
 -r password -p password -o plain -m aes-256-cfb -P origin
 ----
-EXAMPLE2[compatible with SS]:
+EXAMPLE2[SSR only]:
 -----
--r password -p password -o plain -m aes-256-cfb -P origin
+-r password -p password -o tls1.2_ticket_auth_compatible -m aes-256-cfb -P auth_aes128_md5
 -----
 
 

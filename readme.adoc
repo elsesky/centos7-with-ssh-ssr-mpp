@@ -1,24 +1,41 @@
-== Build Docker Images for CentOS with SSH Access
+== Build Docker Images for CentOS with SSH and SSR for arukas
 
-=== Dockerfile
+=== USAGE
 
-https://github.com/kinogmt/docker-containers/blob/master/centos-ssh/Dockerfile[Dockerfile]
-
-=== Build
-Run following command in the directory with Dockerfile above.
-
+CMD:
 -----------------------------
-% docker build -t centos-ssh .
+-r root_pass -p port_pass -o OBFS -m METHOD -P PROTOCOL
 -----------------------------
-
-=== Run
-
-==== Start one container simply using docker run command
-
+example[compatible with SS]:
 -----------------------------
- % docker run -d -h c1 --name c1
+-r password -p password -o plain -m aes-256-cfb -P origin
 -----------------------------
 
-==== Start multiple containers using docker-compose command
 
-See https://github.com/kinogmt/docker-containers/blob/master/centos-ssh/compose.adoc[here].
+
+=== If you run it without any one above,it use default value below
+
+-r default value: 
+-----------------------------
+password
+-----------------------------
+
+-p default value:
+-----------------------------
+password
+-----------------------------
+
+-o default value:
+-----------------------------
+tls1.2_ticket_auth_compatible
+-----------------------------
+
+-m default value:
+-----------------------------
+aes-256-cfb
+-----------------------------
+
+-P default value:
+-----------------------------
+auth_aes128_md5
+-----------------------------

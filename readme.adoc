@@ -6,6 +6,8 @@ CMD:
 -----------------------------
 -r root_pass -p port_pass -o OBFS -m METHOD -P PROTOCOL
 -----------------------------
+
+
 example[compatible with SS]:
 -----------------------------
 -r password -p password -o plain -m aes-256-cfb -P origin

@@ -40,7 +40,7 @@ RUN  (mkdir /elsesky; \
 # -----------------------------------------------------------------------------
 # Set default environment variables
 # -----------------------------------------------------------------------------
-ENV PORT_PASS "dengbo801018~!"
+ENV PORT_PASS "password"
 ENV METHOD "aes-256-cfb"
 ENV PROTOCOL "auth_aes128_md5" 
 ENV PROTOCOL_PARAM "" 

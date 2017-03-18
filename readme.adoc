@@ -31,7 +31,7 @@ EXAMPLE2[SSR only]:
 -----
 
 
-=== If you run it without any one above,it use default value below
+=== If you run without any one param above,it use default value below
 
 -r default value: 
 -----------------------------

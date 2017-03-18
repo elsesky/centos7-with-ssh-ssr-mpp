@@ -28,6 +28,7 @@ do
     esac
 done
 
+echo "Change SSR settings"
 echo>/elsesky/shadowsocksr/user-config.json
 echo "{">>/elsesky/shadowsocksr/user-config.json
 echo " \"server\": \"0.0.0.0\",">>/elsesky/shadowsocksr/user-config.json
@@ -71,13 +72,17 @@ echo " \"connect_verbose_info\": 0,">>/elsesky/shadowsocksr/user-config.json
 echo " \"redirect\": \"\",">>/elsesky/shadowsocksr/user-config.json
 echo " \"fast_open\": false">>/elsesky/shadowsocksr/user-config.json
 echo "}">>/elsesky/shadowsocksr/user-config.json
+echo "Done!"
 
+echo "Change root pass to $ROOT_PASS"
 echo "root:$ROOT_PASS" | chpasswd
-
+echo "Done!"
 
 echo "start cron"
 service crond start
+echo "Done!"
 echo "start ssr"
 /elsesky/shadowsocksr/shadowsocks/run.sh
+echo "Done!"
 echo "start sshd"
 /usr/sbin/sshd -D

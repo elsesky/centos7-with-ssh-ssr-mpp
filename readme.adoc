@@ -8,9 +8,9 @@ CMD:
 -----------------------------
 
 EXAMPLE[compatible with SS]:
------------------------------
+----
 -r password -p password -o plain -m aes-256-cfb -P origin
-
+----
 
 
 

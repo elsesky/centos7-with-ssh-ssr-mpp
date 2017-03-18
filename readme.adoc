@@ -8,8 +8,12 @@ You can set 8388-8406 in Port option for ssr and 22 in Port option for ssh on ar
 
 === USAGE
 ===== PORT:
+---
 22:SSH
+---
+----
 8388 - 8406:SSR
+----
 
 ==== CMD:
 -----------------------------

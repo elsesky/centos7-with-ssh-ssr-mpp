@@ -40,13 +40,13 @@ RUN  (mkdir /elsesky; \
 # -----------------------------------------------------------------------------
 # Set default environment variables
 # -----------------------------------------------------------------------------
-ENV PORT_PASS="dengbo801018~!"
-ENV METHOD="aes-256-cfb"
-ENV PROTOCOL="auth_aes128_md5" 
-ENV PROTOCOL_PARAM="" 
-ENV OBFS="tls1.2_ticket_auth_compatible" 
-ENV OBFS_PARAM="" 
-ENV ROOT_PASS="password" 
+ENV PORT_PASS "dengbo801018~!"
+ENV METHOD "aes-256-cfb"
+ENV PROTOCOL "auth_aes128_md5" 
+ENV PROTOCOL_PARAM "" 
+ENV OBFS "tls1.2_ticket_auth_compatible" 
+ENV OBFS_PARAM "" 
+ENV ROOT_PASS "password" 
 
 ##########################################################################
 #git clone

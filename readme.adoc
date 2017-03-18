@@ -7,11 +7,14 @@ CMD:
 -r root_pass -p port_pass -o OBFS -m METHOD -P PROTOCOL
 -----------------------------
 
-EXAMPLE[compatible with SS]:
+EXAMPLE1[compatible with SS]:
 ----
 -r password -p password -o plain -m aes-256-cfb -P origin
 ----
-
+EXAMPLE2[compatible with SS]:
+-----
+-r password -p password -o plain -m aes-256-cfb -P origin
+-----
 
 
 === If you run it without any one above,it use default value below

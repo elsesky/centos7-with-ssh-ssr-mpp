@@ -19,6 +19,25 @@ do
         -p)
           echo "port pass=$2"
           PORT_PASS=$2
+          p1=$2
+          p2=$2
+          p3=$2
+          p4=$2
+          p5=$2
+          p6=$2
+          p7=$2
+          p8=$2
+          p9=$2
+          p10=$2
+          p11=$2
+          p12=$2
+          p13=$2
+          p14=$2
+          p15=$2
+          p16=$2
+          p17=$2
+          p18=$2
+          p19=$2
           shift 2;;
         -o)
           echo "OBFS IS $2"
@@ -133,25 +152,25 @@ echo " \"server_ipv6\": \"::\",">>/elsesky/shadowsocksr/user-config.json
 echo " \"local_address\": \"127.0.0.1\",">>/elsesky/shadowsocksr/user-config.json
 echo " \"local_port\": 1080,">>/elsesky/shadowsocksr/user-config.json
 echo " \"port_password\":{">>/elsesky/shadowsocksr/user-config.json
-echo " \"8388\":\"$PORT_PASS\",">>/elsesky/shadowsocksr/user-config.json
-echo " \"8389\":\"$PORT_PASS\",">>/elsesky/shadowsocksr/user-config.json
-echo " \"8390\":\"$PORT_PASS\",">>/elsesky/shadowsocksr/user-config.json
-echo " \"8391\":\"$PORT_PASS\",">>/elsesky/shadowsocksr/user-config.json
-echo " \"8392\":\"$PORT_PASS\",">>/elsesky/shadowsocksr/user-config.json
-echo " \"8393\":\"$PORT_PASS\",">>/elsesky/shadowsocksr/user-config.json
-echo " \"8394\":\"$PORT_PASS\",">>/elsesky/shadowsocksr/user-config.json
-echo " \"8395\":\"$PORT_PASS\",">>/elsesky/shadowsocksr/user-config.json
-echo " \"8396\":\"$PORT_PASS\",">>/elsesky/shadowsocksr/user-config.json
-echo " \"8397\":\"$PORT_PASS\",">>/elsesky/shadowsocksr/user-config.json
-echo " \"8398\":\"$PORT_PASS\",">>/elsesky/shadowsocksr/user-config.json
-echo " \"8399\":\"$PORT_PASS\",">>/elsesky/shadowsocksr/user-config.json
-echo " \"8400\":\"$PORT_PASS\",">>/elsesky/shadowsocksr/user-config.json
-echo " \"8401\":\"$PORT_PASS\",">>/elsesky/shadowsocksr/user-config.json
-echo " \"8402\":\"$PORT_PASS\",">>/elsesky/shadowsocksr/user-config.json
-echo " \"8403\":\"$PORT_PASS\",">>/elsesky/shadowsocksr/user-config.json
-echo " \"8404\":\"$PORT_PASS\",">>/elsesky/shadowsocksr/user-config.json
-echo " \"8405\":\"$PORT_PASS\",">>/elsesky/shadowsocksr/user-config.json
-echo " \"8406\":\"$PORT_PASS\"">>/elsesky/shadowsocksr/user-config.json
+echo " \"8388\":\"$p1\",">>/elsesky/shadowsocksr/user-config.json
+echo " \"8389\":\"$p2\",">>/elsesky/shadowsocksr/user-config.json
+echo " \"8390\":\"$p3\",">>/elsesky/shadowsocksr/user-config.json
+echo " \"8391\":\"$p4\",">>/elsesky/shadowsocksr/user-config.json
+echo " \"8392\":\"$p5\",">>/elsesky/shadowsocksr/user-config.json
+echo " \"8393\":\"$p6\",">>/elsesky/shadowsocksr/user-config.json
+echo " \"8394\":\"$p7\",">>/elsesky/shadowsocksr/user-config.json
+echo " \"8395\":\"$p8\",">>/elsesky/shadowsocksr/user-config.json
+echo " \"8396\":\"$p9\",">>/elsesky/shadowsocksr/user-config.json
+echo " \"8397\":\"$p10\",">>/elsesky/shadowsocksr/user-config.json
+echo " \"8398\":\"$p11\",">>/elsesky/shadowsocksr/user-config.json
+echo " \"8399\":\"$p12\",">>/elsesky/shadowsocksr/user-config.json
+echo " \"8400\":\"$p13\",">>/elsesky/shadowsocksr/user-config.json
+echo " \"8401\":\"$p14\",">>/elsesky/shadowsocksr/user-config.json
+echo " \"8402\":\"$p15\",">>/elsesky/shadowsocksr/user-config.json
+echo " \"8403\":\"$p16\",">>/elsesky/shadowsocksr/user-config.json
+echo " \"8404\":\"$p17\",">>/elsesky/shadowsocksr/user-config.json
+echo " \"8405\":\"$p18\",">>/elsesky/shadowsocksr/user-config.json
+echo " \"8406\":\"$p19\"">>/elsesky/shadowsocksr/user-config.json
 echo " },">>/elsesky/shadowsocksr/user-config.json
 echo " \"method\": \"$METHOD\",">>/elsesky/shadowsocksr/user-config.json
 echo " \"protocol\": \"$PROTOCOL\",">>/elsesky/shadowsocksr/user-config.json

@@ -59,7 +59,7 @@ EXAMPLE1[compatible with SS](set port 8388,8389,8400):
 
 EXAMPLE2[SSR only](set port 8388,8389,8401):
 ---------
--r password -p password -o tls1.2_ticket_auth_compatible -m aes-256-cfb -P auth_aes128_md5  --p1 p1password --p2 p2password --p14 p13password
+-r password -p password -o tls1.2_ticket_auth_compatible -m aes-256-cfb -P auth_aes128_md5  --p1 p1password --p2 p2password --p14 p14password
 ---------
 NOTICE! You must use -p to set portpass before you use --p1 to --p19 to set per port,or the port pass will be reset by -p arg
 

@@ -47,24 +47,24 @@ ENV ROOT_PASS "password"
 ##########################################################################
 # Set default port pass variables
 ENV p1="password" \
-	p2="password" \
-	p3="password" \
-	p4="password" \
-	p5="password" \
-	p6="password" \
-	p7="password" \
-	p8="password" \
-	p9="password" \
-	p10="password" \
-	p11="password" \
-	p12="password" \
+     p2="password" \
+     p3="password" \
+     p4="password" \
+     p5="password" \
+     p6="password" \
+     p7="password" \
+     p8="password" \
+     p9="password" \
+     p10="password" \
+     p11="password" \
+     p12="password" \
      p13="password" \
      p14="password" \
      p15="password" \
      p16="password" \
      p17="password" \
      p18="password" \
-	p19="password"
+     p19="password"
 
 
 ##########################################################################

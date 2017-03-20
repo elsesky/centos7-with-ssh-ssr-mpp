@@ -29,6 +29,38 @@ EXAMPLE2[SSR only]:
 -----
 -r password -p password -o tls1.2_ticket_auth_compatible -m aes-256-cfb -P auth_aes128_md5
 -----
+==== CMD(ADVANCE):
+You  can set password per port. From port 8338 to 8406, use arg p1 to p19 to set,port-pass table is below:
+--------
+8388:p1
+8389:p2
+8390:p3
+8391:p4
+8392:p5
+8393:p6
+8394:p7
+8395:p8
+8396:p9
+8397:p10
+8398:p11
+8399:p12
+8400:p13
+8401:p14
+8402:p15
+8403:p16
+8404:p17
+8405:p18
+8406:p19
+--------
+EXAMPLE1[compatible with SS](set port 8388,8389,8400):
+-------
+-r password -p password -o plain -m aes-256-cfb -P origin --p1 p1password --p2 p2password --p13 p13password
+-------
+
+EXAMPLE2[SSR only](set port 8388,8389,8401):
+---------
+-r password -p password -o tls1.2_ticket_auth_compatible -m aes-256-cfb -P auth_aes128_md5  --p1 p1password --p2 p2password --p14 p13password
+---------
 
 
 === If you run without any one param above,it use default value below
@@ -56,4 +88,9 @@ aes-256-cfb
 -P default value:
 -----------------------------
 auth_aes128_md5
+-----------------------------
+
+-p1 to -p19 default value:
+-----------------------------
+password
 -----------------------------

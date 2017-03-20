@@ -1,30 +1,127 @@
 #!/bin/bash
 #ping www.baidu.com -c 5
 
-while getopts :r:p:o:a:m:P:A: opt
+ARGS=`getopt -o r:p:o:a:m:P:A: --long p1:,p2:,p3:,p4:,p5:,p6:,p7:,p8:,p9:,p10:,p11:,p12:,p13:,p14:,p15:,p16:,p17:,p18:,p19: -n '1.sh' -- "$@"`
+if [ $? != 0 ]; then
+    echo "Args error..."
+    exit 1
+fi
+
+eval set - "${ARGS}"
+
+while true
 do
-    case $opt in
-        r)
-          echo "root pass=$OPTARG"
-          ROOT_PASS=$OPTARG;;
-        p)
-          echo "port pass=$OPTARG"
-          PORT_PASS=$OPTARG;;
-        o)
-          echo "OBFS IS $OPTARG"
-          OBFS=$OPTARG;;
-        a)
-          echo "OBFS PARA IS $OPTARG"
-          OBFS_PARAM=$OPTARG;;
-        m)
-          echo "METHOD IS $OPTARG"
-          METHOD=$OPTARG;;
-        P)
-          echo "PROTOCOL IS $OPTARG"
-          PROTOCOL=$OPTARG;;
-        A)
-          echo "PROTOCOL PARAM IS $OPTARG"
-          PROTOCOL_PARAM=$OPTARG;;
+    case "$1" in
+        -r)
+          echo "root pass=$2"
+          ROOT_PASS=$2
+          shift 2;;
+        -p)
+          echo "port pass=$2"
+          PORT_PASS=$2
+          shift 2;;
+        -o)
+          echo "OBFS IS $2"
+          OBFS=$2
+          shift 2;;
+        -a)
+          echo "OBFS PARA IS $2"
+          OBFS_PARAM=$2
+          shift 2;;
+        -m)
+          echo "METHOD IS $2"
+          METHOD=$2
+          shift 2;;
+        -P)
+          echo "PROTOCOL IS $2"
+          PROTOCOL=$2
+          shift 2;;
+        -A)
+          echo "PROTOCOL PARAM IS $2"
+          PROTOCOL_PARAM=$2
+          shift 2;;
+        --p1) 
+            echo "port1 pass=$2";
+            p1=$2
+            shift 2;;
+        --p2) 
+            echo "port2 pass=$2";
+            p2=$2
+            shift 2;;
+        --p3) 
+            echo "port3 pass=$2";
+            p3=$2
+            shift 2;;
+        --p4) 
+            echo "port4 pass=$2";
+            p4=$2
+            shift 2;;
+        --p5) 
+            echo "port5 pass=$2";
+            p5=$2
+            shift 2;;
+        --p6) 
+            echo "port6 pass=$2";
+            p6=$2
+            shift 2;;
+        --p7) 
+            echo "port7 pass=$2";
+            p7=$2
+            shift 2;;
+        --p8) 
+            echo "port8 pass=$2";
+            p8=$2
+            shift 2;;
+        --p9) 
+            echo "port9 pass=$2";
+            p9=$2
+            shift 2;;
+        --p10) 
+            echo "port10 pass=$2";
+            p10=$2
+            shift 2;;
+        --p11) 
+            echo "port11 pass=$2";
+            p11=$2
+            shift 2;;
+        --p12) 
+            echo "port12 pass=$2";
+            p12=$2
+            shift 2;;
+        --p13) 
+            echo "port13 pass=$2";
+            p13=$2
+            shift 2;;
+        --p14) 
+            echo "port14 pass=$2";
+            p14=$2
+            shift 2;;
+        --p15) 
+            echo "port15 pass=$2";
+            p15=$2
+            shift 2;;
+        --p16) 
+            echo "port16 pass=$2";
+            p16=$2
+            shift 2;;
+        --p17) 
+            echo "port17 pass=$2";
+            p17=$2
+            shift 2;;
+        --p18) 
+            echo "port18 pass=$2";
+            p18=$2
+            shift 2;;
+        --p19) 
+            echo "port19 pass=$2";
+            p19=$2
+            shift 2;;
+        --)
+            shift
+            break;;
+        *)
+            echo "Internal error!"
+            exit 1;;
     esac
 done
 

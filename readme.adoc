@@ -31,7 +31,7 @@ EXAMPLE2[SSR only]:
 -r password -p password -o tls1.2_ticket_auth_compatible -m aes-256-cfb -P auth_aes128_md5
 -----
 ==== CMD(ADVANCE):
-By default ,port pass will be set by -p arg.You  can set password per port. From port 8338 to 8406, use arg p1 to p19 to set,port-pass table is below:
+By default ,port pass will be set by -p arg.You  can set password per port. From port 8338 to 8406, use arg --p1 to --p19 to set,port-pass table is below:
 --------
 8388:p1
 8389:p2

@@ -16,7 +16,7 @@ RUN rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-
 RUN (yum install -y hiera lsyncd sshpass rng-tools || true)
 
 # start sshd to generate host keys, patch sshd_config and enable yum repos
-RUN (service sshd start; \
+RUN (systemctl start sshd; \
      sed -i 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config; \
      sed -i 's/#UsePAM no/UsePAM no/g' /etc/ssh/sshd_config; \
      sed -i 's/#PermitRootLogin yes/PermitRootLogin yes/' /etc/ssh/sshd_config; \

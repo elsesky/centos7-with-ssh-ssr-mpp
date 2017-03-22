@@ -7,7 +7,7 @@ FROM centos:7.3.1611
 RUN yum update -y glibc-common
 ##########################################################################
 # all yum installations here
-RUN yum install -y sudo passwd openssh-server openssh-clients tar screen crontabs strace libpcap bc patch ruby git nano || true
+RUN yum install -y sudo passwd openssh-server openssh-clients tar screen cronie cronie-anacron crontabs strace libpcap bc patch ruby git nano || true
 
 ##########################################################################
 # add epel repository

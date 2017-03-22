@@ -2,6 +2,9 @@
 
 FROM centos:7.3.1611
 
+yum list|grep ruby
+exit 1
+
 ##########################################################################
 ### update glibc-common for locale files
 RUN yum update -y glibc-common

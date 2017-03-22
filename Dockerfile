@@ -4,8 +4,7 @@ FROM centos:7.3.1611
 
 ##########################################################################
 ### update glibc-common for locale files
-RUN yum update -y glibc-common
-
+RUN yum update -y glibc-common ruby
 ##########################################################################
 # all yum installations here
 RUN yum install -y sudo passwd openssh-server openssh-clients tar screen crontabs strace telnet perl libpcap bc patch ntp dnsmasq unzip pax which git nano || true

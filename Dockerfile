@@ -21,11 +21,21 @@ RUN (systemctl start sshd; \
      sed -i 's/#UsePAM no/UsePAM no/g' /etc/ssh/sshd_config; \
      sed -i 's/#PermitRootLogin yes/PermitRootLogin yes/' /etc/ssh/sshd_config; \
      sed -i 's/enabled=0/enabled=1/' /etc/yum.repos.d/CentOS-Base.repo)
+     
+RUN sed -i \
+	-e 's~^PasswordAuthentication yes~PasswordAuthentication yes~g' \
+	-e 's~^#PermitRootLogin yes~PermitRootLogin yes~g' \
+	-e 's~^\(.*\)/usr/libexec/openssh/sftp-server$~\1internal-sftp~g' \
+	/etc/ssh/sshd_config
 
 RUN (mkdir -p /root/.ssh/; \
      rm -f /var/lib/rpm/.rpm.lock; \
      echo "StrictHostKeyChecking=no" > /root/.ssh/config; \
      echo "UserKnownHostsFile=/dev/null" >> /root/.ssh/config)
+
+ADD authorized_keys /etc/services-config/ssh/
+ADD authorized_keys /root/.ssh/
+
 
 # terminfo for screen.xterm-256color
 ADD screen.xterm-256color /root/
